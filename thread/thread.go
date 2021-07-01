@@ -16,31 +16,43 @@ func SumAlgA(numberToTest int) int {
 func SumAlgB(numberToTest int) int {
 	results := 0
 	var wg sync.WaitGroup
-	// mu := &sync.Mutex{}
 
-	for i := 10; i <= numberToTest; i += 10 {
-		var from, to int
-		if i == 10 {
-			from = 1
-			to = 10
-		} else {
-			from = i - 9
-			to = i
+	localSum := func(from, to int, wg *sync.WaitGroup) {
+		// defer wg.Done()
+		sum := 0
+		for i := from; i <= to; i++ {
+			sum += i
 		}
-
-		wg.Add(1)
-		go func() {
-			sum := 0
-			for i := from; i <= to; i++ {
-				sum += i
-			}
-			// mu.Lock()
-			results += sum
-			// mu.Unlock()
-			wg.Done()
-		}()
-		wg.Wait()
+		results += sum
 	}
+
+	// This loop adding time consume
+
+	// splitter := numberToTest / 5
+	// for i := splitter; i <= numberToTest; i += splitter {
+	// 	wg.Add(1)
+	// 	if i == splitter {
+	// 		go localSum(1, splitter, &wg)
+	// 	} else {
+	// 		go localSum(i-splitter+1, i, &wg)
+	// 	}
+	// 	wg.Wait()
+	// }
+
+	from1 := 1
+	to1 := numberToTest / 2
+
+	from2 := to1 + 1
+	to2 := to1 + to1
+
+	from3 := to2 + 1
+	to3 := numberToTest
+
+	// wg.Add(3)
+	go localSum(from1, to1, &wg)
+	go localSum(from2, to2, &wg)
+	go localSum(from3, to3, &wg)
+	// wg.Wait()
 
 	return results
 }
