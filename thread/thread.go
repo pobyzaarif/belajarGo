@@ -18,7 +18,7 @@ func SumAlgB(numberToTest int) int {
 	var wg sync.WaitGroup
 
 	localSum := func(from, to int, wg *sync.WaitGroup) {
-		// defer wg.Done()
+		defer wg.Done()
 		sum := 0
 		for i := from; i <= to; i++ {
 			sum += i
@@ -48,11 +48,11 @@ func SumAlgB(numberToTest int) int {
 	from3 := to2 + 1
 	to3 := numberToTest
 
-	// wg.Add(3)
+	wg.Add(3)
 	go localSum(from1, to1, &wg)
 	go localSum(from2, to2, &wg)
 	go localSum(from3, to3, &wg)
-	// wg.Wait()
+	wg.Wait()
 
 	return results
 }
