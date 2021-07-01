@@ -40,18 +40,22 @@ func SumAlgB(numberToTest int) int {
 	// }
 
 	from1 := 1
-	to1 := numberToTest / 2
+	to1 := numberToTest / 4
 
 	from2 := to1 + 1
 	to2 := to1 + to1
 
 	from3 := to2 + 1
-	to3 := numberToTest
+	to3 := to2 + to1
 
-	wg.Add(3)
+	from4 := to3 + 1
+	to4 := numberToTest
+
+	wg.Add(4)
 	go localSum(from1, to1, &wg)
 	go localSum(from2, to2, &wg)
 	go localSum(from3, to3, &wg)
+	go localSum(from4, to4, &wg)
 	wg.Wait()
 
 	return results

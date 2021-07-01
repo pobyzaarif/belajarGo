@@ -7,17 +7,11 @@ import (
 )
 
 func TestSumAlgA(t *testing.T) {
-	sumA := SumAlgA(1000)
-	sumB := SumAlgA(1000)
-	sumC := SumAlgC(1000)
+	sumA := SumAlgA(100)
+	sumB := SumAlgA(100)
+	sumC := SumAlgC(100)
 	assert.Equal(t, sumA, sumB)
 	assert.Equal(t, sumA, sumC)
-}
-
-func BenchmarkSumAlgA_10(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		SumAlgA(10)
-	}
 }
 
 func BenchmarkSumAlgA_100(b *testing.B) {
@@ -28,13 +22,13 @@ func BenchmarkSumAlgA_100(b *testing.B) {
 
 func BenchmarkSumAlgA_1000(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		SumAlgA(10000000)
+		SumAlgA(1000)
 	}
 }
 
-func BenchmarkSumAlgB_10(b *testing.B) {
+func BenchmarkSumAlgA_100000000(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		SumAlgB(10)
+		SumAlgA(100000000)
 	}
 }
 
@@ -46,13 +40,13 @@ func BenchmarkSumAlgB_100(b *testing.B) {
 
 func BenchmarkSumAlgB_1000(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		SumAlgB(10000000)
+		SumAlgB(1000)
 	}
 }
 
-func BenchmarkSumAlgC_10(b *testing.B) {
+func BenchmarkSumAlgB_100000000(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		SumAlgC(10)
+		SumAlgB(100000000)
 	}
 }
 
@@ -64,6 +58,12 @@ func BenchmarkSumAlgC_100(b *testing.B) {
 
 func BenchmarkSumAlgC_1000(b *testing.B) {
 	for n := 0; n < b.N; n++ {
-		SumAlgC(10000000)
+		SumAlgC(1000)
+	}
+}
+
+func BenchmarkSumAlgC_100000000(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		SumAlgC(100000000)
 	}
 }
