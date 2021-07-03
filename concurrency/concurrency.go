@@ -1,4 +1,4 @@
-package thread
+package concurrency
 
 import (
 	"sync"
