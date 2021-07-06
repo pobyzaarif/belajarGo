@@ -16,6 +16,7 @@ func SumAlgA(numberToTest int) int {
 func SumAlgB(numberToTest int) int {
 	results := 0
 	var wg sync.WaitGroup
+	mu := &sync.Mutex{}
 
 	localSum := func(from, to int, wg *sync.WaitGroup) {
 		defer wg.Done()
@@ -23,7 +24,10 @@ func SumAlgB(numberToTest int) int {
 		for i := from; i <= to; i++ {
 			sum += i
 		}
+
+		mu.Lock()
 		results += sum
+		mu.Unlock()
 	}
 
 	// This loop adding time consume
@@ -69,6 +73,7 @@ func SumAlgC(numberToTest int) int {
 	to2 := numberToTest
 
 	c := make(chan int)
+	defer close(c)
 	localSum := func(from, to int, c chan int) {
 		sum := 0
 		for i := from; i <= to; i++ {
