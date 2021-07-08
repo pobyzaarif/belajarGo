@@ -1,0 +1,15 @@
+{
+  "name": "poby",
+  "age": 1,
+  "married": true,
+  "empty": null,
+  "salary": 1.234,
+  "social_media": {
+    "twitter": "pobyzaarif",
+    "instagram": "pobyzaarif"
+  },
+  "hobbies": [
+    "coding",
+    "singing"
+  ]
+}

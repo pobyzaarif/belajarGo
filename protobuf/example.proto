@@ -1,0 +1,21 @@
+syntax = "proto3";
+package protobuf;
+option go_package = "./";
+
+import "google/protobuf/any.proto";
+
+message Profile {
+
+    message Social_media {
+        string twitter = 1;
+        string instagram = 2;
+    }
+
+    string name = 1;
+    uint32 age = 2;
+    bool married = 3;
+    google.protobuf.Any empty = 4;
+    double salary = 5;
+    Social_media social_media = 6;
+    repeated string hobbies = 7;
+}
