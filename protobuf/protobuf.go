@@ -1,6 +1,7 @@
 package protobuf
 
 import (
+	localProto "belajar/protobuf/proto"
 	"fmt"
 	"log"
 
@@ -8,12 +9,12 @@ import (
 )
 
 func LearnProto() {
-	socMed := &Profile_SocialMedia{
+	socMed := &localProto.Profile_SocialMedia{
 		Twitter:   "pobyzaarif",
 		Instagram: "pobyzaarif",
 	}
 
-	profile := &Profile{
+	profile := &localProto.Profile{
 		Name:        "poby",
 		Age:         1,
 		Married:     true,
@@ -31,7 +32,7 @@ func LearnProto() {
 
 	fmt.Println(data)
 
-	newProfile := &Profile{}
+	newProfile := &localProto.Profile{}
 	err = proto.Unmarshal(data, newProfile)
 	if err != nil {
 		log.Fatal("err unmarshal : ", err)
