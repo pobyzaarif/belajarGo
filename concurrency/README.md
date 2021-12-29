@@ -10,17 +10,17 @@ $ go test -bench=. -benchmem
 ```
 goos: darwin
 goarch: amd64
-pkg: belajar/concurrency
+pkg: github.com/pobyzaarif/belajarGo/concurrency
 cpu: Intel(R) Core(TM) i5-5350U CPU @ 1.80GHz
-BenchmarkSumAlgA_100-4         	25547047	     45.00 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSumAlgA_1000-4        	 3006142	     375.3 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSumAlgA_100000000-4   	      30	  36770675 ns/op	       0 B/op	       0 allocs/op
-BenchmarkSumAlgB_100-4         	  389761	      3150 ns/op	      56 B/op	       4 allocs/op
-BenchmarkSumAlgB_1000-4        	  252988	      4049 ns/op	      56 B/op	       4 allocs/op
-BenchmarkSumAlgB_100000000-4   	      60	  21598352 ns/op	      56 B/op	       4 allocs/op
-BenchmarkSumAlgC_100-4         	  573788	      2078 ns/op	      96 B/op	       1 allocs/op
-BenchmarkSumAlgC_1000-4        	  396218	      2842 ns/op	      96 B/op	       1 allocs/op
-BenchmarkSumAlgC_100000000-4   	      58	  22051159 ns/op	      96 B/op	       1 allocs/op
+BenchmarkSumAlgA_100-4         	19195593	     65.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSumAlgA_1000-4        	 2532300	     414.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSumAlgA_100000000-4   	      30	  40843531 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSumAlgB_100-4         	  307144	      3616 ns/op	     248 B/op	       8 allocs/op
+BenchmarkSumAlgB_1000-4        	  238645	      4314 ns/op	     248 B/op	       8 allocs/op
+BenchmarkSumAlgB_100000000-4   	      58	  23121940 ns/op	     248 B/op	       8 allocs/op
+BenchmarkSumAlgC_100-4         	  499446	      2409 ns/op	     192 B/op	       3 allocs/op
+BenchmarkSumAlgC_1000-4        	  368048	      3048 ns/op	     192 B/op	       3 allocs/op
+BenchmarkSumAlgC_100000000-4   	      54	  21770005 ns/op	     192 B/op	       3 allocs/op
 PASS
-ok  	belajar/concurrency	12.364s
+ok  	github.com/pobyzaarif/belajarGo/concurrency	11.860s
 ```
