@@ -1,8 +1,9 @@
 package main
 
 import (
-	"belajar/concurrency"
 	"fmt"
+
+	concurrency "github.com/pobyzaarif/belajarGo/concurrency"
 )
 
 func main() {

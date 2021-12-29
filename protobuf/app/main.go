@@ -1,6 +1,6 @@
 package main
 
-import "belajar/protobuf"
+import protobuf "github.com/pobyzaarif/belajarGo/protobuf"
 
 func main() {
 	protobuf.LearnProto()

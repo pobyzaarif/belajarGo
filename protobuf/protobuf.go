@@ -1,9 +1,10 @@
 package protobuf
 
 import (
-	localProto "belajar/protobuf/proto"
 	"fmt"
 	"log"
+
+	localProto "github.com/pobyzaarif/belajarGo/protobuf/proto"
 
 	"google.golang.org/protobuf/proto"
 )

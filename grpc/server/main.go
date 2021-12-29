@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	"belajar/grpc/proto"
+	"github.com/pobyzaarif/belajarGo/grpc/proto"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

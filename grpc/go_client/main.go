@@ -1,13 +1,14 @@
 package main
 
 import (
-	"belajar/grpc/proto"
 	"context"
 	"fmt"
 	"log"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/pobyzaarif/belajarGo/grpc/proto"
 
 	"google.golang.org/grpc"
 )
