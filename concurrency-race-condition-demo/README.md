@@ -13,6 +13,8 @@ There are 3 functions called deductWalletX which allows you to run with concurre
 play :
 you can run this multiple times then see the different result
 `concurrency-race-condition-demo $ go run main.go `
+
 or
+
 using Go Race Detector
 `concurrency-race-condition-demo $ go run -race main.go`
