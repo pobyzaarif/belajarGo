@@ -1,18 +1,18 @@
-case :
+#### case :
 Someone ask me about locking process in golang (especially in goroutine)
 
-suggestion :
-Try create example that com
+#### suggestion :
+Try to create example
 
-result :
+#### result :
 There are 3 functions called deductWalletX which allows you to run with concurrent process.
 - deductWalletA is thread-safe
 - deductWalletB isn't thread-safe,
 - deductWalletC isn't thread-safe,
 
-play :
+#### play :
 you can run this multiple times then see the different result
-`concurrency-race-condition-demo $ go run main.go `
+`concurrency-race-condition-demo $ go run main.go`
 
 or
 
