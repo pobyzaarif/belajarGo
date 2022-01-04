@@ -8,7 +8,7 @@ Try to create example
 There are 3 functions called deductWalletX which allows you to run with concurrent process.
 - deductWalletA is thread-safe
 - deductWalletB isn't thread-safe,
-- deductWalletC isn't thread-safe,
+- `go deductWalletC` + `fmt.Println` potentially race condition,
 
 #### play :
 you can run this multiple times then see the different result
